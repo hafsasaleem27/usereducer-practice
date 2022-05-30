@@ -97,23 +97,23 @@ const Login = (props) => {
     <Card className={classes.login}>
       <form onSubmit={submitHandler}>
         <Input
-          state={emailState}
+          value={emailState.value}
+          isValid={emailIsValid}
           id="email"
           type="email"
+          label="E-Mail"
           onChange={emailChangeHandler}
           onBlur={validateEmailHandler}
-        >
-          E-Mail
-        </Input>
+        />
         <Input
-          state={passwordState}
+          value={passwordState.value}
+          isValid={passwordIsValid}
           id="password"
           type="password"
+          label="Password"
           onChange={passwordChangeHandler}
           onBlur={validatePasswordHandler}
-        >
-          Password
-        </Input>
+        />
         <div className={classes.actions}>
           <Button type="submit" className={classes.btn} disabled={!formIsValid}>
             Login

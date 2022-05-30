@@ -5,14 +5,14 @@ const Input = (props) => {
   return (
     <div
       className={`${classes.control} ${
-        props.state.isValid === false ? classes.invalid : ""
+        props.isValid === false ? classes.invalid : ""
       }`}
     >
-      <label htmlFor={props.id}>{props.children}</label>
+      <label htmlFor={props.id}>{props.label}</label>
       <input
-        type={props.type || 'text'}
+        type={props.type}
         id={props.id}
-        value={props.state.value}
+        value={props.value}
         onChange={props.onChange}
         onBlur={props.onBlur}
       />
